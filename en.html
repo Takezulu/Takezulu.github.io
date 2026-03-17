@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Root Wave Inc. — A wave of change that starts from the root. User-centric game and software development.">
+  <meta property="og:title" content="Root Wave Inc.">
+  <meta property="og:description" content="A wave of change that starts from the root. User-centric game and software development.">
+  <meta property="og:type" content="website">
+  <title>Root Wave Inc. — From Root to Wave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/ci-logo.png">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <canvas id="wave-canvas"></canvas>
+
+  <nav id="nav">
+    <div class="nav-logo">
+      <img src="assets/ci-logo.png" alt="Root Wave CI" class="nav-ci">
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" data-idx="0">Home</a></li>
+      <li><a href="#philosophy" data-idx="1">Philosophy</a></li>
+      <li><a href="#development" data-idx="2">Development</a></li>
+      <li><a href="#funpractical" data-idx="3">Fun & Practical</a></li>
+      <li><a href="#technology" data-idx="4">Technology</a></li>
+    </ul>
+    <a href="index.html" class="lang-switch" title="한국어로 보기">KR</a>
+  </nav>
+
+  <div class="scroll-indicator" id="scroll-indicator">
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+  </div>
+
+  <main id="main-container">
+
+    <section id="hero" class="section section--hero">
+      <div class="hero-glow hero-glow--1"></div>
+      <div class="hero-glow hero-glow--2"></div>
+      <div class="hero-content">
+        <div class="hero-logo-wrap">
+          <img src="assets/ci-logo.png" alt="Root Wave" class="hero-logo">
+          <div class="logo-glow"></div>
+        </div>
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="word" data-delay="0">From</span>
+            <span class="word accent-green" data-delay="1">Root</span>
+            <span class="word light" data-delay="2">to</span>
+            <span class="word accent-navy" data-delay="3">Wave</span>
+          </h1>
+          <p class="hero-sub">A Wave of Change, Rooted in Foundation</p>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="scroll-cue">
+          <span>Scroll</span>
+          <div class="scroll-cue-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="philosophy" class="section section--philosophy">
+      <div class="section-inner">
+        <div class="section-content reveal-block">
+          <span class="section-num">01</span>
+          <h2 class="section-title reveal-text">Rooted in</h2>
+          <h2 class="section-title-em reveal-text">A Wave of Change</h2>
+          <div class="section-divider"></div>
+          <p class="section-desc reveal-text">
+            Starting from a deeply rooted foundation,<br>
+            we transform the world like a mighty wave.<br><br>
+            Just as the roots of a tree reach deep<br>
+            into the earth, our technical prowess is<br>
+            built on a solid foundation.<br>
+            And that power becomes an unstoppable wave,<br>
+            creating entirely new experiences.
+          </p>
+        </div>
+        <div class="section-visual philosophy-visual reveal-block">
+          <div class="root-lines">
+            <div class="root-line" style="--delay:0.2s;--rotate:-25deg;--h:120px"></div>
+            <div class="root-line" style="--delay:0.4s;--rotate:0deg;--h:160px"></div>
+            <div class="root-line" style="--delay:0.6s;--rotate:25deg;--h:120px"></div>
+          </div>
+          <div class="wave-particles" id="philosophy-particles"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="development" class="section section--development">
+      <div class="section-inner">
+        <div class="section-content reveal-block">
+          <span class="section-num">02</span>
+          <h2 class="section-title reveal-text">Built for Users</h2>
+          <h2 class="section-title-em reveal-text">Games & Software</h2>
+          <div class="section-divider"></div>
+          <p class="section-desc reveal-text">
+            We listen to the voice of our users.<br>
+            We understand what they truly want,<br>
+            and craft experiences that exceed<br>
+            their expectations.<br><br>
+            Whether it's games or software,<br>
+            user-centric development is<br>
+            the core value of Root Wave.
+          </p>
+        </div>
+        <div class="section-visual dev-visual reveal-block">
+          <div class="glass-card" data-float="1">
+            <span class="card-icon">🎮</span>
+            <span class="card-label">Game</span>
+            <span class="card-glow"></span>
+          </div>
+          <div class="glass-card" data-float="2">
+            <span class="card-icon">💻</span>
+            <span class="card-label">Software</span>
+            <span class="card-glow"></span>
+          </div>
+          <div class="glass-card" data-float="3">
+            <span class="card-icon">👥</span>
+            <span class="card-label">User-Centric</span>
+            <span class="card-glow"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="funpractical" class="section section--funpractical">
+      <div class="section-inner section-inner--split">
+        <div class="section-content reveal-block">
+          <span class="section-num">03</span>
+          <h2 class="section-title reveal-text">Fun and Practical</h2>
+          <h2 class="section-title-em reveal-text">At Once</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="section-content-right reveal-block">
+          <p class="section-desc reveal-text">
+            Technology without fun is dead technology.<br>
+            Fun without practicality is an empty shell.<br><br>
+            Root Wave never separates the two.<br>
+            Delivering joy to our users while<br>
+            providing real, tangible value—<br>
+            that is our development philosophy.
+          </p>
+          <div class="tag-row reveal-text">
+            <span class="tag-word">Fun</span>
+            <span class="tag-x">×</span>
+            <span class="tag-word tag-word--alt">Practical</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology" class="section section--technology">
+      <div class="tech-glow"></div>
+      <div class="section-inner">
+        <div class="section-content reveal-block">
+          <span class="section-num">04</span>
+          <h2 class="section-title reveal-text">A New Era Demands</h2>
+          <h2 class="section-title-em reveal-text">New Technology</h2>
+          <div class="section-divider"></div>
+          <p class="section-desc reveal-text">
+            AI, real-time engines, cloud native—<br>
+            Among the technologies being born anew,<br>
+            we stand at the forefront to experiment<br>
+            and adopt them first.<br><br>
+            A new era requires new approaches.<br>
+            Root Wave is paving the way.
+          </p>
+        </div>
+        <div class="section-visual tech-visual reveal-block">
+          <div class="orbit-system">
+            <div class="orbit-ring orbit-ring--1"></div>
+            <div class="orbit-ring orbit-ring--2"></div>
+            <div class="orbit-ring orbit-ring--3"></div>
+            <div class="orbit-center"></div>
+            <div class="orbit-particle orbit-particle--1"></div>
+            <div class="orbit-particle orbit-particle--2"></div>
+            <div class="orbit-particle orbit-particle--3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="assets/ci-logo.png" alt="Root Wave" class="footer-ci">
+        </div>
+        <div class="footer-info">
+          <p class="footer-company">Root Wave Inc.</p>
+          <p class="footer-copy">&copy; 2025 Root Wave Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
