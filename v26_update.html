@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RPG, I GUESS? — Update 1.0.6 Patch Notes</title>
+<meta name="description" content="Ring Event, ad reward change to Relic Gacha, Duel and Raid fixes. Update 1.0.6 patch notes.">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RPG, I GUESS?">
+<meta property="og:title" content="RPG, I GUESS? — Update 1.0.6 Patch Notes">
+<meta property="og:description" content="Ring Event begins. Side-screen ad reward changes from Gold to Relic Gacha. Duel and Raid entry fixes.">
+<meta property="og:image" content="https://rootwave.co.kr/v106_og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://rootwave.co.kr/v106_update.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta property="og:locale:alternate" content="th_TH">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RPG, I GUESS? — Update 1.0.6 Patch Notes">
+<meta name="twitter:description" content="Ring Event begins. Side-screen ad reward changes from Gold to Relic Gacha. Duel and Raid entry fixes.">
+<meta name="twitter:image" content="https://rootwave.co.kr/v106_og.jpg">
+<meta name="theme-color" content="#12100e">
+
+<style>
+  :root{
+    --bg:#f6f3ee;
+    --bg-elev:#ffffff;
+    --bg-sunken:#efeae1;
+    --ink:#22201d;
+    --ink-soft:#5d574e;
+    --ink-faint:#8d8579;
+    --line:#e0d9cd;
+    --line-soft:#ece6db;
+    --gold:#a9761b;
+    --gold-ink:#7d560f;
+    --gold-wash:#f7edd8;
+    --tag-new:#2f7d5b;
+    --tag-new-bg:#e3f2ea;
+    --tag-chg:#1f6690;
+    --tag-chg-bg:#e2eef7;
+    --tag-fix:#8a5030;
+    --tag-fix-bg:#f7eae1;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(34,32,29,.05), 0 8px 24px -12px rgba(34,32,29,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12100e;
+      --bg-elev:#1b1815;
+      --bg-sunken:#171412;
+      --ink:#ece7df;
+      --ink-soft:#b3aa9c;
+      --ink-faint:#857d70;
+      --line:#2e2823;
+      --line-soft:#241f1b;
+      --gold:#e5b45a;
+      --gold-ink:#f0c979;
+      --gold-wash:#2a2116;
+      --tag-new:#6fc79b;
+      --tag-new-bg:#182c23;
+      --tag-chg:#79b7dd;
+      --tag-chg-bg:#152530;
+      --tag-fix:#d9a077;
+      --tag-fix-bg:#2b1f17;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12100e;
+    --bg-elev:#1b1815;
+    --bg-sunken:#171412;
+    --ink:#ece7df;
+    --ink-soft:#b3aa9c;
+    --ink-faint:#857d70;
+    --line:#2e2823;
+    --line-soft:#241f1b;
+    --gold:#e5b45a;
+    --gold-ink:#f0c979;
+    --gold-wash:#2a2116;
+    --tag-new:#6fc79b;
+    --tag-new-bg:#182c23;
+    --tag-chg:#79b7dd;
+    --tag-chg-bg:#152530;
+    --tag-fix:#d9a077;
+    --tag-fix-bg:#2b1f17;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Apple SD Gothic Neo","Noto Sans KR","Noto Sans TC","Noto Sans Thai",system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px 96px}
+
+  /* ---------- header ---------- */
+  header{
+    padding:44px 0 0;
+  }
+  .eyebrow{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:700;
+  }
+  .ver{
+    display:inline-block;padding:3px 10px;border-radius:999px;
+    background:var(--gold-wash);color:var(--gold-ink);
+    border:1px solid color-mix(in srgb, var(--gold) 30%, transparent);
+    letter-spacing:.06em;
+  }
+  h1{
+    font-size:clamp(28px,6vw,40px);
+    line-height:1.2;letter-spacing:-.02em;margin:14px 0 8px;font-weight:800;
+  }
+  .sub{color:var(--ink-soft);margin:0 0 26px;font-size:15px}
+
+  /* ---------- controls ---------- */
+  .bar{
+    display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    padding:14px 0 22px;border-bottom:1px solid var(--line);
+    margin-bottom:34px;
+  }
+  .langs{display:flex;gap:6px;flex-wrap:wrap;flex:1 1 auto}
+  .langs button{
+    font:inherit;font-size:13.5px;font-weight:600;
+    padding:7px 13px;border-radius:999px;cursor:pointer;
+    background:transparent;color:var(--ink-soft);
+    border:1px solid var(--line);
+    transition:background .15s,color .15s,border-color .15s;
+  }
+  .langs button:hover{color:var(--ink);border-color:var(--ink-faint)}
+  .langs button[aria-selected="true"]{
+    background:var(--ink);color:var(--bg);border-color:var(--ink);
+  }
+  .theme{
+    font:inherit;font-size:13.5px;font-weight:600;
+    margin-left:auto;
+    width:38px;height:36px;display:grid;place-items:center;
+    border-radius:999px;cursor:pointer;
+    background:transparent;color:var(--ink-soft);border:1px solid var(--line);
+  }
+  .theme:hover{color:var(--ink);border-color:var(--ink-faint)}
+
+  /* ---------- sections ---------- */
+  section{margin:0 0 46px}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+    padding:5px 11px;border-radius:6px;margin-bottom:16px;
+  }
+  .k-new{color:var(--tag-new);background:var(--tag-new-bg)}
+  .k-chg{color:var(--tag-chg);background:var(--tag-chg-bg)}
+  .k-fix{color:var(--tag-fix);background:var(--tag-fix-bg)}
+
+  h2{font-size:22px;line-height:1.35;letter-spacing:-.01em;margin:0 0 10px;font-weight:800}
+  h3{
+    font-size:16.5px;margin:0 0 8px;font-weight:700;
+    color:var(--ink);
+  }
+  p{margin:0 0 14px;color:var(--ink-soft)}
+  p.lead{color:var(--ink);font-size:16.5px}
+
+  .card{
+    background:var(--bg-elev);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px 22px;
+    margin:0 0 14px;
+    box-shadow:var(--shadow);
+  }
+  .card.ring{border-left:3px solid var(--gold)}
+
+  ul{margin:0;padding-left:0;list-style:none}
+  li{
+    position:relative;padding-left:18px;margin:0 0 8px;color:var(--ink-soft);
+  }
+  li:last-child{margin-bottom:0}
+  li::before{
+    content:"";position:absolute;left:2px;top:.72em;
+    width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.75;
+  }
+
+  .label{
+    font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-faint);margin:0 0 10px;
+  }
+
+  /* ---------- table ---------- */
+  .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 14px}
+  table{border-collapse:collapse;width:100%;min-width:340px;font-size:15px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line-soft)}
+  th{
+    font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-faint);background:var(--bg-sunken);
+    border-bottom:1px solid var(--line);
+  }
+  th:first-child,td:first-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+  td:first-child{font-weight:700;color:var(--ink)}
+  tbody tr:last-child td{border-bottom:none}
+
+  .pkg{
+    display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;
+  }
+  .chip{
+    display:inline-block;padding:6px 12px;border-radius:8px;
+    background:var(--gold-wash);color:var(--gold-ink);
+    border:1px solid color-mix(in srgb, var(--gold) 26%, transparent);
+    font-size:14px;font-weight:700;
+  }
+
+  .note{
+    display:flex;gap:10px;align-items:flex-start;
+    background:var(--bg-sunken);border:1px dashed var(--line);
+    border-radius:10px;padding:13px 15px;margin:14px 0 0;
+    font-size:14.5px;color:var(--ink-soft);line-height:1.6;
+  }
+  .note b{color:var(--ink);font-weight:700}
+  .note span.i{color:var(--gold);font-weight:800;flex:0 0 auto}
+
+  hr.sep{border:none;border-top:1px solid var(--line);margin:0 0 34px}
+
+  footer{
+    margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+    color:var(--ink-faint);font-size:13.5px;
+  }
+  footer p{color:var(--ink-faint);margin:0 0 6px}
+
+  [hidden]{display:none !important}
+  @media (max-width:560px){
+    .wrap{padding:0 16px 72px}
+    .card{padding:17px 16px}
+    th,td{padding:10px 11px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">
+      <span class="ver" data-i18n="verBadge">Update 1.0.6</span>
+      <span data-i18n="eyebrow">Patch Notes</span>
+    </div>
+    <h1 data-i18n="title">RPG, I GUESS?</h1>
+    <p class="sub" data-i18n="sub">Ring Event begins, and the side-screen ad reward changes.</p>
+  </header>
+
+  <div class="bar">
+    <div class="langs" role="tablist" aria-label="Language">
+      <button role="tab" data-lang="en" aria-selected="true">English</button>
+      <button role="tab" data-lang="ko" aria-selected="false">한국어</button>
+      <button role="tab" data-lang="zh" aria-selected="false">中文（繁體）</button>
+      <button role="tab" data-lang="th" aria-selected="false">ไทย</button>
+      <button role="tab" data-lang="vi" aria-selected="false">Tiếng Việt</button>
+    </div>
+    <button class="theme" id="themeBtn" type="button" aria-label="Toggle theme">◐</button>
+  </div>
+
+  <main id="doc"></main>
+
+  <footer>
+    <p data-i18n="footNote">Item names and figures follow the in-game display. Prices are shown in your store's local currency.</p>
+    <p>© Root Wave Inc.</p>
+  </footer>
+
+</div>
+
+<script>
+/* ------------------------------------------------------------------
+   Language dictionary.  English is the primary language.
+   Order: English → 한국어 → 中文(繁體) → ไทย → Tiếng Việt
+   Item names follow the in-game locale table (DKLocale_Data_D).
+------------------------------------------------------------------ */
+const L = {
+  en: {
+    htmlLang: "en",
+    verBadge: "Update 1.0.6",
+    eyebrow: "Patch Notes",
+    title: "RPG, I GUESS?",
+    sub: "The Ring Event begins, and the side-screen ad reward changes.",
+    footNote: "Item names and figures follow the in-game display. Prices are shown in your store's local currency.",
+    doc: `
+      <section>
+        <span class="kicker k-new">New · Event</span>
+        <h2>Ring Event</h2>
+        <p class="lead">Two rings can go into the event ring slot. There is only <b>one slot</b>, so you can equip the Crude Defense Ring <b>or</b> the Crude Attack Ring — not both at once.</p>
+
+        <div class="card ring">
+          <h3>Crude Defense Ring</h3>
+          <ul>
+            <li>Exchanged with Useful Fragments gathered while hunting. You can get it without spending anything.</li>
+            <li>As you enhance it, it boosts Defense and Magic / Physical / Ranged Defense.</li>
+          </ul>
+        </div>
+
+        <div class="card ring">
+          <h3>Crude Attack Ring</h3>
+          <ul>
+            <li>Obtainable from the package product.</li>
+            <li>As you enhance it, it boosts Attack Success, Additional Attack Power, Physical / Magic Penetration, Skill Damage and more.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Collecting Fragments</h3>
+          <ul>
+            <li>Useful Fragments drop in normal hunting fields.</li>
+            <li>They are not included in some rewards, such as Boss and Infinite Tower.</li>
+            <li>They cannot be sold through Auto Sell.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Exchange</h3>
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th>Fragments</th><th>You receive</th></tr></thead>
+              <tbody>
+                <tr><td>100</td><td>Crude Secret Enhancement Stone ×1</td></tr>
+                <tr><td>200</td><td>Shining Crude Secret Enhancement Stone ×1</td></tr>
+                <tr><td>350</td><td>Crude Defense Ring ×1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Attack Ring Package</h3>
+          <div class="pkg">
+            <span class="chip">Crude Attack Ring ×3</span>
+            <span class="chip">Crude Secret Protection Stone ×5</span>
+            <span class="chip">2,000 Rubies</span>
+          </div>
+          <ul>
+            <li>No purchase limit.</li>
+            <li>The price is the amount shown in your store.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Enhancement Materials</h3>
+          <ul>
+            <li><b>Crude Secret Enhancement Stone</b> — Ruby Shop, Enhance tab.</li>
+            <li><b>Crude Secret Protection Stone</b> — Mileage Shop, Enhance tab.</li>
+            <li>Event rings can only use these dedicated enhancement stones and protection stones.</li>
+          </ul>
+          <div class="note"><span class="i">※</span><span>The event period will be announced separately before it ends. Once it is over, we will let you know how any leftover fragments will be collected.</span></div>
+        </div>
+      </section>
+
+      <hr class="sep">
+
+      <section>
+        <span class="kicker k-chg">Changed</span>
+        <h2>Ad Rewards</h2>
+        <p class="lead">The reward for the ad on the side of the screen changes from Gold to a <b>Relic Gacha</b>.</p>
+        <div class="card">
+          <ul>
+            <li>Watching the ad immediately performs 1 Relic Gacha pull.</li>
+            <li>3 times per day — the same count as the previous Gold ad.</li>
+            <li>Pet ad rewards are unchanged.</li>
+          </ul>
+        </div>
+      </section>
+
+      <hr class="sep">
+
+      <section>
+        <span class="kicker k-fix">Fixed · Improved</span>
+        <h2>Fixes and Improvements</h2>
+        <div class="card">
+          <ul>
+            <li>Fixed an issue where the opponent did not appear in Duel.</li>
+            <li>Fixed an issue where Raid entry could hang in some environments.</li>
+            <li>Cleaned up the Event and Shop screens where names or quantities were cut off, or icons looked out of place.</li>
+          </ul>
+        </div>
+      </section>
+    `
+  },
+
+  ko: {
+    htmlLang: "ko",
+    verBadge: "1.0.6 업데이트",
+    eyebrow: "패치노트",
+    title: "이런것도 RPG라고",
+    sub: "반지 이벤트가 시작되고, 화면 옆 광고 보상이 바뀝니다.",
+    footNote: "아이템 이름과 수치는 인게임 표기를 따릅니다. 가격은 스토어에 표시되는 금액입니다.",
+    doc: `
+      <section>
+        <span class="kicker k-new">신규 · 이벤트</span>
+        <h2>반지 이벤트</h2>
+        <p class="lead">이벤트 반지 슬롯에 반지 2종이 들어갑니다. 슬롯은 <b>1칸</b>이라 방어의 반지 <b>또는</b> 공격의 반지 중 하나만 착용할 수 있습니다.</p>
+
+        <div class="card ring">
+          <h3>대충 만든 방어의 반지</h3>
+          <ul>
+            <li>사냥으로 모은 쓸만한 조각으로 교환합니다. 과금 없이 받을 수 있습니다.</li>
+            <li>강화도에 따라 방어력과 마법 / 물리 / 원거리 방어력 스탯에 도움을 줍니다.</li>
+          </ul>
+        </div>
+
+        <div class="card ring">
+          <h3>대충 만든 공격의 반지</h3>
+          <ul>
+            <li>패키지 상품으로 획득할 수 있습니다.</li>
+            <li>강화도에 따라 공격성공, 추가 공격력, 물리 / 마법 관통, 스킬 피해 증가 등의 스탯에 도움을 줍니다.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>조각 모으기</h3>
+          <ul>
+            <li>일반 사냥터에서 쓸만한 조각이 드랍됩니다.</li>
+            <li>보스 · 무한의 탑 등 일부 보상에는 포함되지 않습니다.</li>
+            <li>자동판매로는 팔리지 않습니다.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>교환</h3>
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th>조각</th><th>받는 것</th></tr></thead>
+              <tbody>
+                <tr><td>100개</td><td>대충 만든 비밀의 강화석 ×1</td></tr>
+                <tr><td>200개</td><td>대충 만든 빛나는 비밀의 강화석 ×1</td></tr>
+                <tr><td>350개</td><td>대충 만든 방어의 반지 ×1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>공격의 반지 패키지</h3>
+          <div class="pkg">
+            <span class="chip">대충 만든 공격의 반지 ×3</span>
+            <span class="chip">대충 만든 비밀의 파괴 방지석 ×5</span>
+            <span class="chip">루비 2,000</span>
+          </div>
+          <ul>
+            <li>구매 횟수 제한이 없습니다.</li>
+            <li>가격은 스토어 표시 금액입니다.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>강화 재료</h3>
+          <ul>
+            <li><b>대충 만든 비밀의 강화석</b> — 루비 상점 강화 탭</li>
+            <li><b>대충 만든 비밀의 파괴 방지석</b> — 마일리지 상점 강화 탭</li>
+            <li>이벤트 반지는 전용 강화석과 방지석만 사용할 수 있습니다.</li>
+          </ul>
+          <div class="note"><span class="i">※</span><span>이벤트 기간은 종료 전 별도로 안내드립니다. 종료 후 남은 조각은 회수 안내를 드립니다.</span></div>
+        </div>
+      </section>
+
+      <hr class="sep">
+
+      <section>
+        <span class="kicker k-chg">변경</span>
+        <h2>광고 리워드</h2>
+        <p class="lead">화면 옆 광고 보상이 골드에서 <b>유물 뽑기</b>로 바뀝니다.</p>
+        <div class="card">
+          <ul>
+            <li>광고 시청 시 유물 뽑기를 바로 1회 진행합니다.</li>
+            <li>하루 3회입니다. 기존 골드 광고 횟수와 같습니다.</li>
+            <li>펫 광고 보상은 그대로입니다.</li>
+          </ul>
+        </div>
+      </section>
+
+      <hr class="sep">
+
+      <section>
+        <span class="kicker k-fix">수정 · 개선</span>
+        <h2>수정 및 개선</h2>
+        <div class="card">
+          <ul>
+            <li>결투에서 상대가 나타나지 않던 문제를 수정했습니다.</li>
+            <li>일부 환경에서 레이드 입장이 멈추던 문제를 수정했습니다.</li>
+            <li>이벤트 · 상점 화면에서 이름 · 수량이 잘리거나 아이콘이 어색하던 부분을 다듬었습니다.</li>
+          </ul>
+        </div>
+      </section>
+    `
+  },
+
+  zh: {
+    htmlLang: "zh-Hant",
+    verBadge: "1.0.6 更新",
+    eyebrow: "更新公告",
+    title: "RPG, I GUESS?",
+    sub: "戒指活動開跑，畫面側邊廣告的獎勵也有所變更。",
+    footNote: "道具名稱與數值以遊戲內顯示為準。價格以你所在商店顯示的金額為準。",
+    doc: `
+      <section>
+        <span class="kicker k-new">新增 · 活動</span>
+        <h2>戒指活動</h2>
+        <p class="lead">活動戒指欄位可放入 2 種戒指。欄位只有 <b>1 格</b>，因此粗製防禦戒指與粗製攻擊戒指<b>只能擇一</b>裝備。</p>
+
+        <div class="card ring">
+          <h3>粗製防禦戒指</h3>
+          <ul>
+            <li>使用狩獵蒐集到的「有用的碎片」進行交換。無需付費即可獲得。</li>
+            <li>隨著強化階段提升，可提高防禦力與魔法 / 物理 / 遠距防禦力。</li>
+          </ul>
+        </div>
+
+        <div class="card ring">
+          <h3>粗製攻擊戒指</h3>
+          <ul>
+            <li>可透過組合包商品獲得。</li>
+            <li>隨著強化階段提升，可提高攻擊成功、追加攻擊力、物理 / 魔法穿透、技能傷害增加等能力值。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>蒐集碎片</h3>
+          <ul>
+            <li>「有用的碎片」會在一般狩獵場掉落。</li>
+            <li>BOSS、無限之塔等部分獎勵不包含此道具。</li>
+            <li>無法透過自動販賣賣出。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>交換</h3>
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th>碎片</th><th>可換取</th></tr></thead>
+              <tbody>
+                <tr><td>100 個</td><td>粗製祕密強化石 ×1</td></tr>
+                <tr><td>200 個</td><td>發光的粗製祕密強化石 ×1</td></tr>
+                <tr><td>350 個</td><td>粗製防禦戒指 ×1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>攻擊戒指組合包</h3>
+          <div class="pkg">
+            <span class="chip">粗製攻擊戒指 ×3</span>
+            <span class="chip">粗製祕密防爆石 ×5</span>
+            <span class="chip">紅寶石 2,000</span>
+          </div>
+          <ul>
+            <li>購買次數無限制。</li>
+            <li>價格以商店顯示的金額為準。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>強化材料</h3>
+          <ul>
+            <li><b>粗製祕密強化石</b> — 紅寶石商店的強化分頁。</li>
+            <li><b>粗製祕密防爆石</b> — 累積商店的強化分頁。</li>
+            <li>活動戒指僅能使用專用的強化石與防爆石。</li>
+          </ul>
+          <div class="note"><span class="i">※</span><span>活動期間將於結束前另行公告。活動結束後，我們會再說明剩餘碎片的回收方式。</span></div>
+        </div>
+      </section>
+
+      <hr class="sep">
+
+      <section>
+        <span class="kicker k-chg">變更</span>
+        <h2>廣告獎勵</h2>
+        <p class="lead">畫面側邊廣告的獎勵由金幣變更為<b>遺物抽獎</b>。</p>
+        <div class="card">
+          <ul>
+            <li>觀看廣告後會立即進行 1 次遺物抽獎。</li>
+            <li>每日 3 次，與原本的金幣廣告次數相同。</li>
+            <li>寵物廣告的獎勵維持不變。</li>
+          </ul>
+        </div>
+      </section>
+
+      <hr class="sep">
+
+      <section>
+        <span class="kicker k-fix">修正 · 改善</span>
+        <h2>修正與改善</h2>
+        <div class="card">
+          <ul>
+            <li>修正決鬥中對手不會出現的問題。</li>
+            <li>修正部分環境下討伐戰入場會卡住的問題。</li>
+            <li>調整活動 · 商店畫面中名稱、數量被截斷或圖示顯示不自然的部分。</li>
+          </ul>
+        </div>
+      </section>
+    `
+  },
+
+  th: {
+    htmlLang: "th",
+    verBadge: "อัปเดต 1.0.6",
+    eyebrow: "แพตช์โน้ต",
+    title: "RPG, I GUESS?",
+    sub: "กิจกรรมแหวนเริ่มแล้ว และรางวัลจากโฆษณาด้านข้างจอมีการเปลี่ยนแปลง",
+    footNote: "ชื่อไอเทมและตัวเลขยึดตามที่แสดงในเกม ราคาเป็นไปตามจำนวนที่แสดงในสโตร์ของคุณ",
+    doc: `
+      <section>
+        <span class="kicker k-new">ใหม่ · กิจกรรม</span>
+        <h2>กิจกรรมแหวน</h2>
+        <p class="lead">ช่องแหวนกิจกรรมรองรับแหวน 2 ชนิด แต่มีเพียง <b>1 ช่อง</b> จึงสวมใส่ได้เพียงแหวนป้องกันทำหยาบ <b>หรือ</b> แหวนโจมตีทำหยาบ อย่างใดอย่างหนึ่งเท่านั้น</p>
+
+        <div class="card ring">
+          <h3>แหวนป้องกันทำหยาบ</h3>
+          <ul>
+            <li>แลกได้ด้วยเศษชิ้นส่วนที่มีประโยชน์ที่สะสมจากการล่ามอนสเตอร์ รับได้โดยไม่ต้องเติมเงิน</li>
+            <li>เมื่อเสริมประสิทธิภาพจะเพิ่มค่าป้องกัน และค่าป้องกันเวท / กายภาพ / ระยะไกล</li>
+          </ul>
+        </div>
+
+        <div class="card ring">
+          <h3>แหวนโจมตีทำหยาบ</h3>
+          <ul>
+            <li>รับได้จากสินค้าแพ็คเกจ</li>
+            <li>เมื่อเสริมประสิทธิภาพจะเพิ่มอัตราโจมตีสำเร็จ พลังโจมตีเพิ่มเติม การเจาะเกราะกายภาพ / เวท และความเสียหายของสกิล เป็นต้น</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>การสะสมชิ้นส่วน</h3>
+          <ul>
+            <li>เศษชิ้นส่วนที่มีประโยชน์จะดรอปในพื้นที่ล่าปกติ</li>
+            <li>ไม่รวมอยู่ในรางวัลบางประเภท เช่น บอส และหอคอยอนันต์</li>
+            <li>ไม่สามารถขายผ่านการขายอัตโนมัติได้</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>การแลกเปลี่ยน</h3>
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th>ชิ้นส่วน</th><th>สิ่งที่ได้รับ</th></tr></thead>
+              <tbody>
+                <tr><td>100 ชิ้น</td><td>หินเสริมประสิทธิภาพลับทำหยาบ ×1</td></tr>
+                <tr><td>200 ชิ้น</td><td>หินเสริมประสิทธิภาพลับทำหยาบส่องแสง ×1</td></tr>
+                <tr><td>350 ชิ้น</td><td>แหวนป้องกันทำหยาบ ×1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>แพ็คเกจแหวนโจมตี</h3>
+          <div class="pkg">
+            <span class="chip">แหวนโจมตีทำหยาบ ×3</span>
+            <span class="chip">หินป้องกันลับทำหยาบ ×5</span>
+            <span class="chip">ทับทิม 2,000</span>
+          </div>
+          <ul>
+            <li>ไม่จำกัดจำนวนครั้งในการซื้อ</li>
+            <li>ราคาเป็นไปตามจำนวนที่แสดงในสโตร์</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>วัสดุเสริมประสิทธิภาพ</h3>
+          <ul>
+            <li><b>หินเสริมประสิทธิภาพลับทำหยาบ</b> — ร้านทับทิม แท็บยกระดับ</li>
+            <li><b>หินป้องกันลับทำหยาบ</b> — ร้านไมล์ แท็บยกระดับ</li>
+            <li>แหวนกิจกรรมใช้ได้เฉพาะหินเสริมประสิทธิภาพและหินป้องกันเฉพาะทางเท่านั้น</li>
+          </ul>
+          <div class="note"><span class="i">※</span><span>ระยะเวลากิจกรรมจะประกาศแยกต่างหากก่อนสิ้นสุด และหลังจบกิจกรรมเราจะแจ้งวิธีเรียกคืนชิ้นส่วนที่เหลืออีกครั้ง</span></div>
+        </div>
+      </section>
+
+      <hr class="sep">
+
+      <section>
+        <span class="kicker k-chg">เปลี่ยนแปลง</span>
+        <h2>รางวัลจากโฆษณา</h2>
+        <p class="lead">รางวัลจากโฆษณาด้านข้างจอเปลี่ยนจากทองเป็น <b>Gacha โบราณวัตถุ</b></p>
+        <div class="card">
+          <ul>
+            <li>เมื่อดูโฆษณาจะทำการสุ่ม Gacha โบราณวัตถุ 1 ครั้งทันที</li>
+            <li>วันละ 3 ครั้ง เท่ากับจำนวนครั้งของโฆษณาทองเดิม</li>
+            <li>รางวัลโฆษณาสัตว์เลี้ยงยังคงเหมือนเดิม</li>
+          </ul>
+        </div>
+      </section>
+
+      <hr class="sep">
+
+      <section>
+        <span class="kicker k-fix">แก้ไข · ปรับปรุง</span>
+        <h2>การแก้ไขและปรับปรุง</h2>
+        <div class="card">
+          <ul>
+            <li>แก้ไขปัญหาที่ฝ่ายตรงข้ามไม่ปรากฏในโหมดดวล</li>
+            <li>แก้ไขปัญหาที่การเข้า Raid ค้างในบางสภาพแวดล้อม</li>
+            <li>ปรับส่วนที่ชื่อหรือจำนวนถูกตัด และไอคอนดูไม่เข้าที่ในหน้ากิจกรรมและร้านค้า</li>
+          </ul>
+        </div>
+      </section>
+    `
+  },
+
+  vi: {
+    htmlLang: "vi",
+    verBadge: "Cập nhật 1.0.6",
+    eyebrow: "Ghi chú cập nhật",
+    title: "RPG, I GUESS?",
+    sub: "Sự kiện Nhẫn bắt đầu, và phần thưởng quảng cáo bên cạnh màn hình được thay đổi.",
+    footNote: "Tên vật phẩm và các con số theo hiển thị trong game. Giá là số tiền hiển thị tại cửa hàng của bạn.",
+    doc: `
+      <section>
+        <span class="kicker k-new">Mới · Sự kiện</span>
+        <h2>Sự kiện Nhẫn</h2>
+        <p class="lead">Ô nhẫn sự kiện có thể chứa 2 loại nhẫn. Vì chỉ có <b>1 ô</b>, bạn chỉ được trang bị Nhẫn phòng thủ thô sơ <b>hoặc</b> Nhẫn tấn công thô sơ, không thể mang cả hai.</p>
+
+        <div class="card ring">
+          <h3>Nhẫn phòng thủ thô sơ</h3>
+          <ul>
+            <li>Đổi bằng Mảnh vỡ hữu ích thu thập khi đi săn. Có thể nhận mà không cần nạp tiền.</li>
+            <li>Khi cường hóa, nhẫn tăng Phòng thủ cùng Phòng thủ Phép / Vật lý / Tầm xa.</li>
+          </ul>
+        </div>
+
+        <div class="card ring">
+          <h3>Nhẫn tấn công thô sơ</h3>
+          <ul>
+            <li>Nhận được từ sản phẩm gói.</li>
+            <li>Khi cường hóa, nhẫn tăng Tỉ lệ tấn công thành công, Sát thương cộng thêm, Xuyên giáp Vật lý / Phép, Sát thương kỹ năng và nhiều hơn nữa.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Thu thập Mảnh vỡ</h3>
+          <ul>
+            <li>Mảnh vỡ hữu ích rơi ra tại các khu săn thường.</li>
+            <li>Không có trong một số phần thưởng như Boss và Tháp vô tận.</li>
+            <li>Không thể bán qua Tự động bán.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Trao đổi</h3>
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th>Mảnh vỡ</th><th>Nhận được</th></tr></thead>
+              <tbody>
+                <tr><td>100</td><td>Đá cường hóa bí mật thô sơ ×1</td></tr>
+                <tr><td>200</td><td>Đá cường hóa bí mật thô sơ tỏa sáng ×1</td></tr>
+                <tr><td>350</td><td>Nhẫn phòng thủ thô sơ ×1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Gói Nhẫn tấn công</h3>
+          <div class="pkg">
+            <span class="chip">Nhẫn tấn công thô sơ ×3</span>
+            <span class="chip">Đá bảo vệ bí mật thô sơ ×5</span>
+            <span class="chip">2.000 Hồng ngọc</span>
+          </div>
+          <ul>
+            <li>Không giới hạn số lần mua.</li>
+            <li>Giá là số tiền hiển thị tại cửa hàng.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Nguyên liệu cường hóa</h3>
+          <ul>
+            <li><b>Đá cường hóa bí mật thô sơ</b> — Cửa hàng Hồng ngọc, tab Nâng cao.</li>
+            <li><b>Đá bảo vệ bí mật thô sơ</b> — Cửa hàng số dặm, tab Nâng cao.</li>
+            <li>Nhẫn sự kiện chỉ dùng được đá cường hóa và đá bảo vệ chuyên dụng.</li>
+          </ul>
+          <div class="note"><span class="i">※</span><span>Thời gian diễn ra sự kiện sẽ được thông báo riêng trước khi kết thúc. Sau khi sự kiện khép lại, chúng tôi sẽ hướng dẫn về việc thu hồi số mảnh vỡ còn dư.</span></div>
+        </div>
+      </section>
+
+      <hr class="sep">
+
+      <section>
+        <span class="kicker k-chg">Thay đổi</span>
+        <h2>Phần thưởng quảng cáo</h2>
+        <p class="lead">Phần thưởng của quảng cáo bên cạnh màn hình đổi từ Vàng sang <b>Gacha Di tích</b>.</p>
+        <div class="card">
+          <ul>
+            <li>Xem quảng cáo sẽ thực hiện ngay 1 lượt Gacha Di tích.</li>
+            <li>3 lần mỗi ngày — bằng đúng số lần của quảng cáo Vàng trước đây.</li>
+            <li>Phần thưởng quảng cáo thú cưng giữ nguyên.</li>
+          </ul>
+        </div>
+      </section>
+
+      <hr class="sep">
+
+      <section>
+        <span class="kicker k-fix">Sửa lỗi · Cải thiện</span>
+        <h2>Sửa lỗi và cải thiện</h2>
+        <div class="card">
+          <ul>
+            <li>Đã sửa lỗi đối thủ không xuất hiện trong Đấu tay đôi.</li>
+            <li>Đã sửa lỗi việc vào Raid bị treo trong một số môi trường.</li>
+            <li>Đã chỉnh lại những chỗ tên hoặc số lượng bị cắt và biểu tượng trông chưa hợp lý ở màn hình Sự kiện và Cửa hàng.</li>
+          </ul>
+        </div>
+      </section>
+    `
+  }
+};
+
+/* ---------------- language switching ---------------- */
+const docEl = document.getElementById('doc');
+const buttons = [...document.querySelectorAll('.langs button')];
+
+function apply(lang){
+  const d = L[lang] || L.en;
+  document.documentElement.lang = d.htmlLang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if (d[k] != null) el.textContent = d[k];
+  });
+  docEl.innerHTML = d.doc;
+  buttons.forEach(b=>b.setAttribute('aria-selected', String(b.dataset.lang === lang)));
+  try{ localStorage.setItem('rpgig_lang', lang); }catch(e){}
+}
+
+function detect(){
+  try{
+    const saved = localStorage.getItem('rpgig_lang');
+    if (saved && L[saved]) return saved;
+  }catch(e){}
+  const n = (navigator.languages && navigator.languages[0] || navigator.language || 'en').toLowerCase();
+  if (n.startsWith('ko')) return 'ko';
+  if (n.startsWith('th')) return 'th';
+  if (n.startsWith('vi')) return 'vi';
+  if (n.startsWith('zh')) return 'zh';
+  return 'en';
+}
+
+buttons.forEach(b=>b.addEventListener('click', ()=>apply(b.dataset.lang)));
+apply(detect());
+
+/* ---------------- theme toggle ---------------- */
+const themeBtn = document.getElementById('themeBtn');
+try{
+  const t = localStorage.getItem('rpgig_theme');
+  if (t) document.documentElement.setAttribute('data-theme', t);
+}catch(e){}
+themeBtn.addEventListener('click', ()=>{
+  const cur = document.documentElement.getAttribute('data-theme');
+  const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const next = cur ? (cur === 'dark' ? 'light' : 'dark') : (sysDark ? 'light' : 'dark');
+  document.documentElement.setAttribute('data-theme', next);
+  try{ localStorage.setItem('rpgig_theme', next); }catch(e){}
+});
+</script>
+</body>
+</html>
