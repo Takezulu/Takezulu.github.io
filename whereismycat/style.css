@@ -1,0 +1,123 @@
+
+    :root {
+      --bg-primary: #0a0a0f; --bg-card: #14141f; --border-subtle: #1f1f2c;
+      --text-primary: #f0f0f5; --text-secondary: #a0a0b0; --text-muted: #6a6a7a;
+      --accent-green: #1a8a6b; --accent-green-light: #22b88a; --accent-navy: #2b3a5c; --accent-navy-light: #3d5280;
+      --gradient-wave: linear-gradient(90deg, #3d5280 0%, #22b88a 60%, #7fe0c0 100%);
+      --font-en: 'Outfit', sans-serif; --font-kr: 'Noto Sans KR', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-kr); line-height: 1.75; overflow-x: hidden; }
+    a { color: var(--accent-green-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; min-width: 0; }
+
+    /* nav */
+    nav { position: absolute; top: 0; left: 0; right: 0; z-index: 5; }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    nav img { height: 30px; }
+
+    /* hero */
+    .hero { position: relative; min-height: 640px; display: flex; align-items: center; overflow: hidden;
+            background: #0a0a0f url("img/room.png") center / cover no-repeat; }
+    .hero::before { content: ""; position: absolute; inset: 0;
+            background: linear-gradient(90deg, rgba(10,10,15,.94) 0%, rgba(10,10,15,.78) 45%, rgba(10,10,15,.35) 100%),
+                        linear-gradient(180deg, rgba(10,10,15,.2) 0%, rgba(10,10,15,0) 40%, var(--bg-primary) 100%); }
+    .hero .wrap { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: end; padding-top: 96px; }
+    .hero-text { padding-bottom: 72px; }
+    .eyebrow { font-family: var(--font-en); font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent-green-light); margin-bottom: 14px; }
+    h1 { font-family: var(--font-en); font-size: clamp(48px, 8vw, 84px); font-weight: 900; line-height: 1.0; letter-spacing: -.01em;
+         background: var(--gradient-wave); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-cta { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-char { align-self: end; justify-self: end; height: 660px; width: auto; margin-bottom: -40px; filter: drop-shadow(0 20px 40px rgba(0,0,0,.6)); }
+
+    /* buttons */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 8px; border: 1px solid var(--accent-navy-light);
+           background: rgba(20,20,31,.85); color: var(--text-primary); font-family: var(--font-en); font-weight: 600; font-size: 15px; backdrop-filter: blur(6px); }
+    .btn:hover { border-color: var(--accent-green-light); text-decoration: none; }
+    .btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* sections */
+    section { padding: 72px 0; }
+    h2 { font-family: var(--font-en); font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent-green-light); margin-bottom: 12px; }
+    h3 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; line-height: 1.25; margin-bottom: 20px; }
+    h3 .en { display: block; font-family: var(--font-en); font-weight: 600; font-size: .6em; color: var(--text-secondary); margin-top: 4px; }
+    p { color: var(--text-primary); font-size: 16px; }
+    p.en { color: var(--text-secondary); font-family: var(--font-en); margin-top: 12px; font-size: 15px; }
+    .divider { height: 2px; width: 56px; background: var(--gradient-wave); margin: 0 0 22px; border-radius: 2px; }
+
+    .about { }
+    .about .wrap { display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: center; }
+    .about-char { justify-self: center; height: 520px; width: auto; border-radius: 14px; border: 1px solid var(--border-subtle); box-shadow: 0 30px 60px rgba(0,0,0,.55); }
+
+    .features ul { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .features li { position: relative; min-height: 220px; border-radius: 14px; overflow: hidden; border: 1px solid var(--border-subtle);
+                   background: var(--bg-card) center / cover no-repeat; display: flex; align-items: flex-end; }
+    .features li::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,15,.05) 0%, rgba(10,10,15,.92) 100%); }
+    .features li > div { position: relative; padding: 20px 22px; }
+    .features li strong { display: block; font-size: 19px; font-weight: 700; }
+    .features li small { display: block; color: var(--text-secondary); font-family: var(--font-en); font-size: 13px; margin-top: 3px; }
+    .features li.f1 { background-image: url("img/room.png"); }
+    .features li.f2 { background-image: url("img/decor.png"); }
+    .features li.f3 { background-image: url("img/room.png"); }
+    .features li.f4 { background-image: url("img/decor.png"); }
+
+    .classes ul { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .classes li { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); aspect-ratio: 2 / 3; }
+    .classes li img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .classes li:hover img { transform: scale(1.04); }
+    .classes li div { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 16px 14px; background: linear-gradient(180deg, rgba(10,10,15,0) 0%, rgba(10,10,15,.9) 70%); }
+    .classes li strong { display: block; font-size: 18px; font-weight: 700; }
+    .classes li small { display: block; color: var(--text-secondary); font-family: var(--font-en); font-size: 12px; }
+    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .gallery figure { border-radius: 14px; overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: 0 20px 40px rgba(0,0,0,.45); background: var(--bg-card); }
+    .gallery figcaption { padding: 10px 14px; font-size: 13px; color: var(--text-secondary); }
+    .gameplay figure { border-radius: 14px; overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: 0 30px 60px rgba(0,0,0,.5); }
+    .gameplay figcaption { padding: 10px 14px; font-size: 13px; color: var(--text-muted); font-family: var(--font-en); background: var(--bg-card); }
+
+    .download .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .signin { background: var(--bg-card); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+    dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 24px; font-size: 15px; }
+    dt { color: var(--text-secondary); font-family: var(--font-en); }
+    footer { padding: 28px 0 48px; color: var(--text-muted); font-size: 13px; font-family: var(--font-en); }
+
+    @media (max-width: 860px) {
+      .hero { min-height: 0; }
+      .hero .wrap { grid-template-columns: minmax(0, 1fr); padding-top: 88px; }
+      .hero-text { padding-bottom: 8px; }
+      .hero-char { height: auto; width: min(360px, 90%); justify-self: center; margin-bottom: 0; }
+      .about .wrap { grid-template-columns: minmax(0, 1fr); }
+      .about-char { height: auto; width: min(260px, 70%); order: -1; }
+      .features ul { grid-template-columns: 1fr; }
+      .classes ul { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: 1fr; }
+      section { padding: 56px 0; }
+      dl { grid-template-columns: 1fr; gap: 2px; } dt { margin-top: 10px; }
+    }
+  
+/* Adapt the existing Root Wave page to the game's existing assets. */
+body{overflow-wrap:anywhere;word-break:keep-all}p.en,small{word-break:normal}
+nav .brand{font-family:var(--font-en);font-size:20px;font-weight:800;color:var(--text-primary)}
+h1{font-family:var(--font-kr);font-size:clamp(38px,5.8vw,64px);line-height:1.2;letter-spacing:-.04em}
+.hero .wrap{align-items:center}.hero-text{padding-bottom:64px}.hero-char{width:100%;height:auto;margin:0 0 60px;align-self:center;filter:none}
+.about-char{height:auto;width:300px}.classes li{aspect-ratio:1/1.15}.classes li img{height:auto;object-fit:contain;padding:12px}.classes li div{padding-top:30px}.classes li small{font-size:14px}
+.features li small{font-size:14px;color:#d1d1de}.features li::before{background:linear-gradient(180deg,rgba(10,10,15,.1),rgba(10,10,15,.97))}
+.gallery{max-width:780px;margin-inline:auto}.gallery img{width:100%;height:auto}.gallery figcaption{font-size:14px;color:var(--text-secondary)}
+a:focus-visible{outline:3px solid var(--accent-green-light);outline-offset:5px}.skip{position:absolute;top:-100px;left:20px;background:var(--bg-card);padding:12px;z-index:10}.skip:focus{top:10px}
+@media(max-width:860px){.hero .wrap{padding-top:110px}.hero-text{padding-bottom:0}.hero-char{width:min(400px,100%);margin-bottom:32px}.about-char{width:min(300px,85%)}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.gallery{grid-template-columns:1fr;max-width:340px}.classes ul{gap:10px}.classes li div{padding:30px 12px 12px}.classes li strong{font-size:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* 다운로드 밑의 안내 한 줄 - 토스는 설치가 아니라 「열기」라서 설명이 필요하다. */
+.download .note{margin-top:18px;font-size:14px;color:var(--text-secondary);max-width:62ch}
+.download .note .en{display:block;font-family:var(--font-en);color:var(--text-muted);margin-top:6px;word-break:normal}
+
+/* ── 언어 전환기 ──────────────────────────────────────────────────────────────────────────── */
+.langs{display:flex;gap:14px;align-items:center;font-family:var(--font-en);font-size:14px}
+.langs a{color:var(--text-secondary)}
+.langs a:hover{color:var(--text-primary)}
+.langs .lang-on{color:var(--accent-green-light);font-weight:600}
+
+}
