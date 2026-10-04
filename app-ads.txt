@@ -160,3 +160,4 @@ rubiconproject.com, 20744, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 15268, RESELLER, 0bfd66d529a55807
 lunamedia.io, 2fdb16a1-5025-4c41-9b17-e01e47ebc8b4, RESELLER, 524ecb396915caaf
 pokkt.com, 6246, RESELLER, c45702d9311e25fd
+vungle.com, 6ac0f636dc021dbec1ec887f, DIRECT, c107d686becd2d77
